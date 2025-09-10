@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, PT_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ptSans = PT_Sans({
+  variable: "--font-pt-sans",
   subsets: ["latin"],
+  weight: ["400", "700"], // можно выбрать наборы
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const BebasNeue = Bebas_Neue({
+  variable: "--font-bebas-sans",
   subsets: ["latin"],
+  weight: ["400"], // можно выбрать наборы
 });
 
 export const metadata: Metadata = {
@@ -24,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${ptSans.variable} ${BebasNeue.variable}`}>
         {children}
       </body>
     </html>
